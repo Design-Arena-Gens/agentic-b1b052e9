@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 14% 97%;
+  --card: 217 33% 10%;
+  --card-foreground: 210 14% 97%;
+  --muted: 223 47% 20%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 210 40% 18%;
+  --accent-foreground: 210 40% 98%;
+  --ring: 212 86% 64%;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+        circle at 10% 20%,
+        rgba(65, 98, 255, 0.18),
+        transparent 45%
+      ),
+    radial-gradient(
+        circle at 80% 0%,
+        rgba(255, 99, 220, 0.25),
+        transparent 55%
+      ),
+    #05070f;
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+@supports (backdrop-filter: blur(12px)) {
+  .glass {
+    background: linear-gradient(
+      140deg,
+      rgba(10, 14, 32, 0.72),
+      rgba(10, 10, 18, 0.6)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+  }
+}
